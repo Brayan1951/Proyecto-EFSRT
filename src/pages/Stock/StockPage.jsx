@@ -1,15 +1,47 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import useForm from '../../hooks/useForm'
+import { findById, returnStock } from '../../data/funcionStock'
 import './stock.css'
+
+
+
 export default function StockPage() {
+
+  const [stockData, setStockData] = useState([])
+
+  const { search, changeForm } = useForm({ search: '' })
+
+  const Find = () => {
+    console.log(stockData);
+
+    const stock = findById(search)
+    setStockData(stock)
+  }
+
+
+
+  useEffect(() => {
+    const stock = returnStock()
+    setStockData(stock)
+  }, [])
+
+
+
+
+
+
+
+
+
   return (
     <div className='stock_page'>
       <h2>Mantenimiento de Stock</h2>
 
       <hr />
       <div className="formulario">
-        <input type="text" name="search" placeholder="Buscar..." />
+        <input type="text" name="search" placeholder="Buscar..." onChange={changeForm} />
         <div className="buttons">
-          <button className='find'>Buscar</button>
+          <button className='find' onClick={Find}>Buscar</button>
           <button className='add'>Agregar</button>
 
         </div>
@@ -30,20 +62,23 @@ export default function StockPage() {
           </thead>
           <tbody>
 
-            <tr>
-              <td>1</td>
-              <td>EM_01</td>
-              <td>Hotdog 6 unidades</td>
-              <td>15</td>
-              <td>edit</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>EM_02</td>
-              <td>Hotdog 12 unidades</td>
-              <td>15</td>
-              <td>edit</td>
-            </tr>
+            {
+              stockData.map(({ codigo, descripcion, cantidad }, i) => {
+
+                return (
+                  <tr key={i}>
+                    <td>{i}</td>
+                    <td>{codigo}</td>
+                    <td>{descripcion}</td>
+                    <td>{cantidad}</td>
+                    <td>edit</td>
+                  </tr>
+
+                )
+
+              })
+            }
+
           </tbody>
 
 
