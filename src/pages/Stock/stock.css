@@ -1,0 +1,77 @@
+.stock_page h2 {
+    text-align: center;
+}
+
+
+/* formulario find */
+.stock_page .formulario {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 15px 0px;
+}
+
+.stock_page .formulario input {
+    width: 69%;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+
+.stock_page .formulario .buttons{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.formulario .buttons button{
+    border-radius: 5px;
+    width: 110px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.find{
+    background-color: #F3FF6F;
+}
+.add{
+    background-color: #8CFF6F;
+}
+
+
+
+
+
+
+/* Table */
+.detalle{
+    display: flex;
+    justify-content: center;
+}
+
+#detalle-stock {
+    /* font-family: Arial, Helvetica, sans-serif; */
+    border-collapse: collapse;
+    width: 90%;
+}
+
+#detalle-stock td,
+#detalle-stock th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#detalle-stock tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#detalle-stock tr:hover {
+    background-color: #ddd;
+}
+
+#detalle-stock th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4F4C4C;
+    color: white;
+}
