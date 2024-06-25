@@ -4,26 +4,26 @@
 
 
 /* formulario find */
-.stock_page .formulario {
+.stock_page .formulario_stock {
     width: 100%;
     display: flex;
     justify-content: center;
     margin: 15px 0px;
 }
 
-.stock_page .formulario input {
+.stock_page .formulario_stock input {
     width: 69%;
     padding: 10px 5px;
     border-radius: 5px;
 }
 
-.stock_page .formulario .buttons{
+.stock_page .formulario_stock .buttons{
     width: 20%;
     display: flex;
     justify-content: space-around;
 }
 
-.formulario .buttons button{
+.formulario_stock .buttons button{
     border-radius: 5px;
     width: 110px;
     font-size: 15px;
@@ -75,3 +75,6 @@
     background-color: #4F4C4C;
     color: white;
 }
+
+
+

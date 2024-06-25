@@ -1,4 +1,4 @@
-export const dataStock=[
+export let dataStock=[
 
     {
         codigo:"EM_01",

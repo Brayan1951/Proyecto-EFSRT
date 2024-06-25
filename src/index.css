@@ -13,3 +13,40 @@ li{
   text-decoration: none;
 
 }
+
+/* swall */
+.edit img {
+  width: 25px;
+}
+
+.edit img:hover{
+  cursor: pointer;
+}
+
+/* 
+
+
+Se encuentra 
+
+
+
+*/
+
+
+.formulario{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulario_item{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.item{
+  width: 60%;
+}

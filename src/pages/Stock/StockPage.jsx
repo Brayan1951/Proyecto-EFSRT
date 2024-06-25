@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import useForm from '../../hooks/useForm'
 import { findById, returnStock } from '../../data/funcionStock'
+
+import { editCompontes } from '../components/Componente'
+
+
 import './stock.css'
 
 
@@ -28,6 +32,15 @@ export default function StockPage() {
 
 
 
+  const swalPr = (id) => {
+
+    editCompontes(id, stockData[id]).then(() => {
+      const stock = returnStock()
+      setStockData([...stock])
+    })
+
+  }
+
 
 
 
@@ -38,7 +51,7 @@ export default function StockPage() {
       <h2>Mantenimiento de Stock</h2>
 
       <hr />
-      <div className="formulario">
+      <div className="formulario_stock">
         <input type="text" name="search" placeholder="Buscar..." onChange={changeForm} />
         <div className="buttons">
           <button className='find' onClick={Find}>Buscar</button>
@@ -67,11 +80,11 @@ export default function StockPage() {
 
                 return (
                   <tr key={i}>
-                    <td>{i}</td>
+                    <td>{i + 1}</td>
                     <td>{codigo}</td>
                     <td>{descripcion}</td>
                     <td>{cantidad}</td>
-                    <td>edit</td>
+                    <td className='edit'><img onClick={() => swalPr(i)} src='./src/assets/edit.png'></img></td>
                   </tr>
 
                 )
