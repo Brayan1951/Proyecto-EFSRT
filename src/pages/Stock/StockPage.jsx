@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import useForm from '../../hooks/useForm'
 import { findById, returnStock } from '../../data/funcionStock'
 
-import { editCompontes } from '../components/Componente'
+import { addProducto, editCompontes } from '../components/Componente'
 
 
 import './stock.css'
@@ -40,7 +40,14 @@ export default function StockPage() {
     })
 
   }
+  const addPr =  () => {
+     addProducto().then(() => {
+        const stock = returnStock()
+        setStockData([...stock]) 
+    })
 
+
+  }
 
 
 
@@ -55,7 +62,7 @@ export default function StockPage() {
         <input type="text" name="search" placeholder="Buscar..." onChange={changeForm} />
         <div className="buttons">
           <button className='find' onClick={Find}>Buscar</button>
-          <button className='add'>Agregar</button>
+          <button className='add' onClick={addPr}>Agregar</button>
 
         </div>
       </div>

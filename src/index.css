@@ -44,9 +44,17 @@ Se encuentra
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
 
 .item{
   width: 60%;
+}
+
+
+/* buttons */
+
+.buttons button:hover{
+  cursor: pointer;
 }

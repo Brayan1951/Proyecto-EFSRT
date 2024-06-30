@@ -6,7 +6,11 @@ export const returnStock=()=>{
 }
 
 
-
+export const finOneById=(codigo='')=>{
+codigo=codigo.trim().toUpperCase()
+const producto=dataStock.filter((data)=>data.codigo==codigo)
+return producto
+}
 
 
 export const  findById=(id='')=>{
@@ -18,6 +22,11 @@ return stock
 
 }
 
+
+export const addProduct=(producto)=>{
+    producto.codigo=producto.codigo.toUpperCase()
+    dataStock.push(producto)
+}
 
 
 export const updateStocById=(codigo,formValues)=>{
