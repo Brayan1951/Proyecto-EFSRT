@@ -27,3 +27,5 @@ export let dataStock=[
 
 
 ]
+
+export let Ventas=[]
