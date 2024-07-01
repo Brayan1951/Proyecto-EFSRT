@@ -26,7 +26,7 @@ export default function MenuPage() {
             </NavLink>
           </li>
           <li>
-            <NavLink to={"venta"} className={({ isActive, isPending }) =>
+            <NavLink to={"venta/report"} className={({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "select" : ""
             }>
               Ventas

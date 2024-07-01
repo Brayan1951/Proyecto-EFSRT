@@ -54,7 +54,12 @@ h2 {
 
 }
 .venta__formulario,.venta__carrito{
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
+    /* border: 1px solid rgb(78, 78, 78); */
+
+    border-style: outset;
+    border-radius: 15px;
+    padding: 5px;
     max-height: 300px;
     width: 700px;
 }
@@ -68,10 +73,9 @@ h2 {
     justify-content: center;
 
 }
-.venta__carrito{
-    background-color: aliceblue;
+/* .venta__carrito{
     max-height: 300px;
-}
+} */
 /* fomrulario busqueda */
 /* input & button */
 .formulario_venta_productos{

@@ -4,6 +4,7 @@ import { findById } from '../../data/funcionStock'
 
 import './venta.css'
 import { ventaCarrito } from '../../data/funcionVenta'
+import Swal from 'sweetalert2'
 
 export default function VentaPage() {
 
@@ -38,7 +39,13 @@ export default function VentaPage() {
         };
         setCarrito(prev => [...prev, addProducto]);
       } else {
-        console.log("No hay suficiente stock para agregar el producto.");
+        Swal.fire({
+          icon: "error",
+          title: "No hay suficiente stock para agregar este producto.",
+          text: "Deberias pedir mas este producto!",
+          // footer: '<a href="#">Why do I have this issue?</a>'
+        });
+        // console.log("No hay suficiente stock para agregar el producto.");
       }
     } else {
       // Si el producto ya está en el carrito, actualizar la cantidad

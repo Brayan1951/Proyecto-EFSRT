@@ -3,6 +3,9 @@ import { deleteProduct } from "./funcionStock"
 export const returnVenta=()=>{
     return VentasData
 }
+export const returnVentaTamaño=()=>{
+    return VentasData.length
+}
 const obtenerFechaYHora = () => {
     const ahora = new Date();
     
@@ -21,13 +24,36 @@ const obtenerFechaYHora = () => {
 
 export const ventaCarrito=(productos=[])=>{
 
-    obtenerFechaYHora()
+const codigoTemp=returnVenta()[returnVentaTamaño()-1].codigoVenta+1
+productos.forEach(({codigo,cantidad,precio})=>{
 
-productos.map(({codigo,cantidad})=>{
+    const venta={
+        codigoVenta:codigoTemp,
+        fecha:obtenerFechaYHora(),
+        codigo,
+        cantidad,
+        precio
+    }
+    VentasData.push(venta)
 
     deleteProduct(codigo,cantidad)
 
 })
+// productos.map(({codigo,cantidad,precio})=>{
+
+//     const venta={
+//         codigoVenta:codigoTemp,
+//         fecha:obtenerFechaYHora(),
+//         codigo,
+//         cantidad,
+//         precio
+//     }
+//     VentasData.push(venta)
+
+//     deleteProduct(codigo,cantidad)
+//     console.log(VentasData);
+
+// })
 
 
 

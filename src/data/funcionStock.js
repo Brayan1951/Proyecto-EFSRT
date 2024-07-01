@@ -33,7 +33,6 @@ export const deleteProduct=(codigo,cantidad)=>{
         
         dataStock[index].cantidad=dataStock[index].cantidad-cantidad;
     }
-    console.log(dataStock[index]);
 }
 
 export const updateStocById=(codigo,formValues)=>{
