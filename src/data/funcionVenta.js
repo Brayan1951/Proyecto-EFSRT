@@ -16,21 +16,30 @@ const obtenerFechaYHora = () => {
     const horas = String(ahora.getHours()).padStart(2, '0');
     const minutos = String(ahora.getMinutes()).padStart(2, '0');
     
-    const fechaYHora = `${dia}-${mes}-${año} ${horas}:${minutos}`;
+    const fechaYHora = `${año}-${mes}-${dia} ${horas}:${minutos}`;
     return fechaYHora;
   }
 
 
-
+  export const findDateVenta=(fecha)=>{
+    // console.log(fecha);
+    // codigo=codigo.trim().toUpperCase()
+    const ventas=VentasData.filter((data)=>data.fecha.startsWith(fecha))
+    // const producto=dataStock.filter((data)=>data.codigo==codigo)
+    // return producto
+    return ventas
+    }
 export const ventaCarrito=(productos=[])=>{
-
-const codigoTemp=returnVenta()[returnVentaTamaño()-1].codigoVenta+1
+    let codigoTemp=1
+if (returnVentaTamaño()>0) {
+    codigoTemp=returnVenta()[returnVentaTamaño()-1].codigoVenta+1
+}
 productos.forEach(({codigo,cantidad,precio})=>{
 
     const venta={
         codigoVenta:codigoTemp,
         fecha:obtenerFechaYHora(),
-        codigo,
+        producto:codigo,
         cantidad,
         precio
     }
@@ -39,22 +48,16 @@ productos.forEach(({codigo,cantidad,precio})=>{
     deleteProduct(codigo,cantidad)
 
 })
-// productos.map(({codigo,cantidad,precio})=>{
-
-//     const venta={
-//         codigoVenta:codigoTemp,
-//         fecha:obtenerFechaYHora(),
-//         codigo,
-//         cantidad,
-//         precio
-//     }
-//     VentasData.push(venta)
-
-//     deleteProduct(codigo,cantidad)
-//     console.log(VentasData);
-
-// })
-
 
 
 }
+
+export const eliminarVenta = (codigoVenta, producto) => {
+    const index=VentasData.findIndex(item=>item.codigoVenta==codigoVenta&&item.producto==producto)
+    if (index !== -1) {
+        VentasData.splice(index, 1);
+      }
+      console.log(VentasData);
+    // VentasData = VentasData.filter(venta => !(venta.codigoVenta === codigoVenta && venta.producto === producto));
+  }
+  

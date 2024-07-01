@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import useForm from "../../hooks/useForm";
 import { addProduct, finOneById, updateStocById } from "../../data/funcionStock";
+import { eliminarVenta } from "../../data/funcionVenta";
 
 export const editCompontes = async (id,producto) => {
   const { codigo, descripcion, precio, cantidad } = producto;
@@ -127,4 +128,27 @@ export const addProducto=async ()=>{
 
   })
 
+}
+
+
+export const deleteVentaSwal=async (codigoVenta, producto  )=>{
+  return await Swal.fire({
+    title: "Estas seguro que quieres elimniar?",
+    text: "No prodras recuperar esta venta!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+
+       eliminarVenta(codigoVenta, producto)
+      Swal.fire({
+        title: "Eliminado!",
+        text: "La venta ha sido eliminada exitosamente.",
+        icon: "success"
+      });
+    }
+  });
 }

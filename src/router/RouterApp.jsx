@@ -22,7 +22,7 @@ export const router=createBrowserRouter([
                 path:"venta",
                 children:[
                     {
-                        path:'',
+                        path:'mantenimiento',
                         element:<VentaPage/>,
                     },
                     {

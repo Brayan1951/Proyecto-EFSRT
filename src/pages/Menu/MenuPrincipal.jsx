@@ -19,7 +19,7 @@ export default function MenuPrincipal() {
 
       <button className='btn btn-link-menu'>
 
-        <Link to={'venta'}>
+        <Link to={'venta/report'}>
           Revisar Ventas Totales
 
         </Link>

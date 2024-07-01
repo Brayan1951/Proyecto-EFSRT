@@ -31,15 +31,15 @@ export let dataStock=[
 export let VentasData=[
     {
         codigoVenta:1,
-        fecha:"30-06-2024 21:20",
+        fecha:"2024-06-29 21:20",
         producto:"EM_01",
         cantidad:10,
         precio:15
     },
     {
         codigoVenta:1,
-        fecha:"30-06-2024 21:20",
-        producto:"EM_01",
+        fecha:"2024-06-29 21:20",
+        producto:"EM_02",
         cantidad:10,
         precio:15
     }

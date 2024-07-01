@@ -148,3 +148,11 @@ cursor: pointer;
     font-weight: 700;
 }
 
+
+
+.vender{
+    background-color: #8CFF6F;
+    padding: 1px 15px;
+    border: 1px solid black;
+    color: black;
+}
