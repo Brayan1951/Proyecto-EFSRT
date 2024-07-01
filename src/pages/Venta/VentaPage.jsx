@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import useForm from '../../hooks/useForm'
 import { findById } from '../../data/funcionStock'
-
-import './venta.css'
 import { ventaCarrito } from '../../data/funcionVenta'
 import Swal from 'sweetalert2'
+
+import './venta.css'
 
 export default function VentaPage() {
 

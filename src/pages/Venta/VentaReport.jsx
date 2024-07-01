@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom'
 import { eliminarVenta, findDateVenta, returnVenta } from '../../data/funcionVenta'
 import { deleteVentaSwal } from '../components/Componente'
 
+
+import iconDelete from "../../../src/assets/delete.png";
+
+
+
 export default function VentaReport() {
   const { search, changeForm } = useForm()
 
@@ -77,7 +82,7 @@ export default function VentaReport() {
                     <td>{producto}</td>
                     <td>{cantidad}</td>
                     <td>{precio}</td>
-                    <td className='delete'><img onClick={() => deleteVenta(i)} src='../../src/assets/delete.png'></img></td>
+                    <td className='delete'><img onClick={() => deleteVenta(i)} src={iconDelete}></img></td>
                   </tr>
 
                 )

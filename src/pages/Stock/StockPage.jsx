@@ -3,7 +3,7 @@ import useForm from '../../hooks/useForm'
 import { findById, returnStock } from '../../data/funcionStock'
 
 import { addProducto, editCompontes } from '../components/Componente'
-
+import iconEdit from "../../../src/assets/edit.png";
 
 import './stock.css'
 
@@ -91,7 +91,7 @@ export default function StockPage() {
                     <td>{codigo}</td>
                     <td>{descripcion}</td>
                     <td>{cantidad}</td>
-                    <td className='edit'><img onClick={() => swalPr(i)} src='./src/assets/edit.png'></img></td>
+                    <td className='edit'><img onClick={() => swalPr(i)} src={iconEdit}></img></td>
                   </tr>
 
                 )
