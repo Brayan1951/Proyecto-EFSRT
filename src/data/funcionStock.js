@@ -27,7 +27,14 @@ export const addProduct=(producto)=>{
     producto.codigo=producto.codigo.toUpperCase()
     dataStock.push(producto)
 }
-
+export const deleteProduct=(codigo,cantidad)=>{
+    const index=dataStock.findIndex(item=>item.codigo==codigo)
+    if (dataStock[index].cantidad>=cantidad) {
+        
+        dataStock[index].cantidad=dataStock[index].cantidad-cantidad;
+    }
+    console.log(dataStock[index]);
+}
 
 export const updateStocById=(codigo,formValues)=>{
 

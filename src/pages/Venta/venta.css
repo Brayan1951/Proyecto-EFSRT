@@ -117,3 +117,30 @@ table th {
     background-color: #4F4C4C;
     color: white;
 }
+
+
+.add:hover{
+cursor: pointer;
+}
+
+
+
+/* resultado */
+
+.venta__carrito_resultado{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.resutado_button button:hover{
+    cursor: pointer;
+    background-color: rgb(149, 220, 42);
+}
+.resutado_button button{
+    padding: 10px;
+    background-color: greenyellow;
+    border-radius: 8px;
+    font-weight: 700;
+}
+

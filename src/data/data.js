@@ -28,4 +28,23 @@ export let dataStock=[
 
 ]
 
-export let Ventas=[]
+export let VentasData=[
+    {
+        codig:"V1",
+        fecha:"30-06-2024 21:20",
+        producto:"EM_01",
+        cantidad:10,
+        precio:15
+    },
+    {
+        codig:"V1",
+        fecha:"30-06-2024 21:20",
+        producto:"EM_01",
+        cantidad:10,
+        precio:15
+    }
+
+
+
+
+]
